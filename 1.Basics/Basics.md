@@ -1,6 +1,5 @@
-===============
-1. Strict mode
-===============
+1. Strict mode 
+=========================
 
 Strict mode allows you to place a program or a function in a strict operating context.
 
@@ -73,7 +72,6 @@ With "use strict":
 
 It means the expression and variables inside the eval doesn't pollute the global namespace.
 
-============================================
 2. Does JS pass Variables by value or by reference?
 ============================================
 
