@@ -135,6 +135,10 @@ Pass by reference:
 
 # 3. Rest Operator #
 
+It collapses a number of single elements or compresses a number of single elements into an array.
+
+It is mostly used in the function signatures.
+
 For example, we want to sum up the numbers:
 
 ```javascript
@@ -145,11 +149,86 @@ For example, we want to sum up the numbers:
     }
     shubhamSum(1,2,3);
 ```
- 
+
 <img src="restOperator.png" alt="restOperator.png screenshot"/>
 
+Eg:
+```javaScript
+"use strict";
+    function shubhamSum(a,b){
+        return a+b;
+    }
+    shubhamSum(1)
+```
+<img src="restOperator1.png" alt="restOperator1.png screenshot"/> <br>
+<img src="restOperator2.png" alt="restOperator2.png screenshot"/>
 
+All the arguments which gets passed to a function are always available as a variable/property called arguments.
 
+We need not to declare it anywhere, it exists.
+
+Eg:
+```javaScript
+    function shubhamSum(a,b){
+        console.log(arguments);
+        return a + b;
+    }
+    sum(1,2,3,4);
+```
+<img src="restOperator3.png" alt="restOperator3.png screenshot"/>
+
+So, this is the only thing we had in JS which allow us to handle variable number of arguments.
+
+Arguments is basically an array.
+
+To handle the variable number of arguments, we can write:
+
+```javaScript
+    function shubhamSum(){
+        var total = 0;
+        for (var i=0; i< arguments.length; i++){
+            total += arguments[i];
+        }
+        return total;
+    }
+    shubhamSum(1,2,3,4,5);
+```
+<img src="restOperator4.png" alt="restOperator4.png screenshot"/>
+
+The problem is that by looking at the function signature we can't tell that how many arguments the function is going to take.
+
+Other limitation of this code is that there is no fixxed and variable kind of arguments in this.
+
+Super annoying thing is that the <b>arguments array</b> is not actually an array.
+
+<img src="restOperator5.png" alt="restOperator5.png screenshot"/>
+
+For example, while designing a login functionality for my website, we want 1 mandatory parameter <b>login method</b> and other variable number of parameters as optional.
+
+Eg:
+```javaScript
+    function login(method){
+        var option = arguments.slice(1); //[1,2,3,4].slice
+        console.log(method);
+        console.log(options);
+    }
+    login("facebook",1,2,3,4);
+    //login("twitter", 2,4,6);
+```
+
+The <b>arguments.slice(1);</b> should drop the first element of the array and give last remaining arguments.
+
+Here in our example, it should give:
+```javaScript
+    [1,2,3,4].slice(1); //[2,3,4]
+```
+  <img src="restOperator6.png" alt="restOperator6.png screenshot"/>
+
+  But when we try to slice arguments, BOOM we got an error!!!
+
+  <img src="restOperator7.png" alt="restOperator7.png screenshot"/>
+
+Even though the <b>argument</b> looks like an array, but its not an array. It's some sort of built in structure which looks like an array, means it doesn't have the slice function, which is super annoying.
 
 
 
