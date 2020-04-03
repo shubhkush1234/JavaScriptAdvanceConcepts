@@ -230,6 +230,160 @@ Here in our example, it should give:
 
 Even though the <b>argument</b> looks like an array, but its not an array. It's some sort of built in structure which looks like an array, means it doesn't have the slice function, which is super annoying.
 
+```javaScript
+    function login(method){
+        var options = Array.prototype.slice.call(arguments, 1);
+        console.log(method);
+        console.log(options);
+    }
+    login("facebook", 1,2,3,4)
+```
+  <img src="restOperator8.png" alt="restOperator8.png screenshot"/>
+
+The rest operator creates an array of the arguments passed to it.
+Hence we can run array methods on it directly.
+
+```js
+"use strict";
+    function login(...method){
+        console.log(method.slice(2,5));
+        console.log(method.push("Hi"))
+        console.log(method);
+    }
+    login("facebook", 1,2,3,4)
+```
+
+<img src="restOperator9.png" alt="restOperator9.png screenshot"/>
+
+Improved version of the above code:
+```js
+    "use strict";
+    function login(method, ...options){
+        console.log(method);
+        console.log(options);
+    }
+    login("facebook", 1,2,3,4)
+```
+<img src="restOperator10.png" alt="restOperator10.png screenshot"/>
+
+# 4. Spread Operator #
+
+```js
+    "use strict";
+    var ar1 = [1, 2, 3];
+    var ar2 = [4, 5, 6, ...ar1];
+    console.log(ar2);
+```
+<img src="spread.png" alt="spread.png screenshot"/>
+
+It does a kind of concat.
+
+# 5. Template Literal or Template string #
+
+```js
+    var name="Shubham";
+    var place= "world"
+    var msg= ` Hello
+        ${place}
+        My name is ${name}`;
+    console.log(msg);
+```
+<img src="templateLiteral.png" alt="templateLiteral.png screenshot"/>
+
+We can also write the ternary operator inside the {}.
+
+Eg: 
+```js
+    var isBold = true;
+    var msg = `hello world my name is ${isBold ? "<b>Shubham</b>" : "Shubham"}`;
+    console.log(msg);
+```
+<img src="templateLiteral1.png" alt="templateLiteral1.png screenshot"/>
+
+Template string's application can be seen with the styled components in <b>ReactJS</b>.
+
+Eg: 
+```js
+    function h1(strings) {
+        return "<h1>" + strings[0] + "</h1>";
+    }
+    console.log(h1`ShUbHaM`); //<h1>ShUbHaM</h1>
+```
+<img src="templateLiteral2.png" alt="templateLiteral2.png screenshot"/>
+
+Eg: 
+```js
+    function h1(strings){
+        return  "<h1>" + strings[0] + "</h1>";
+    }
+    var name= "Shubham";
+    var place= "World";
+    console.log(h1`hello ${place} my name is ${name}`);
+```
+Only first part is getting printed out. It's breaking the string into 3 parts: "hello" , " my name is", " ".
+
+<img src="templateLiteral4.png" alt="templateLiteral4.png screenshot"/>
+<img src="templateLiteral5.png" alt="templateLiteral5.png screenshot"/>
+
+We solve the above problem with Template String Tags.
+# 6. Template String Tags #
+
+```js
+    function h1(strings, ...values){
+        return  "<h1>" + strings[0] + "</h1>";
+    }
+    var name= "Shubham";
+    var place= "World";
+    console.log(h1`hello ${place} my name is ${name}`);
+```
+<img src="templateLiteral6.png" alt="templateLiteral6.png screenshot"/>
+To print the whole string:
+
+```js
+    function h1(strings, ...values){
+        var body = "";
+        for (var i = 0; i< strings.length; i++){
+            body += strings[i] + (values[i] || "");
+        }
+        //return "<h1>" + body + </h1> 
+        return  `<h1>${body}</h1>`;
+    }
+    var name= "Shubham";
+    var place= "World";
+    console.log(h1`hello ${place} my name is ${name}`);
+```
+<img src="templateLiteral7.png" alt="templateLiteral7.png screenshot"/>
+
+Eg: React styled components:
+```js
+    const button = styled.a`
+        display: inline-block;
+        border-radius:3px;
+        width: 11rem;
+
+        ${props => props.primary && .css`
+            background: white;
+            color:red;
+        `}
+    `
+```
+
+So, this is a way of implementing a very flexible reusable model of functions with strings which we call as <b>template string</b>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
