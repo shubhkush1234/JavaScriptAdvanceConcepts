@@ -340,6 +340,156 @@ This is how we can control the leaking of the scope of variable.
 
 # Function Closures #
 
+lets go with an example.
+
+Eg:
+```js
+
+    function sayHello(name) {
+        var text = "Hello " + name;
+        console.log(text);
+    };
+
+    sayHello("Shubham");
+
+```
+So, it's a pretty simple function that just prints out the name. 
+
+Now I want to return a function from "sayHello" function which returns my name.
+
+```js
+
+    function sayHello(name) {
+        var text = "Hello " + name;
+
+        return function() {
+            console.log(text);
+        }
+    };
+
+    sayHello("Shubham");
+
+```
+
+So, if we run this, we'll get the function as the output. So, we need to call the function. How do we call a function? We call a function by <b>()</b>. In console, we can run it like this:
+
+```js
+    sayHello("Shubham")();
+```
+
+In code we can run it like this:
+
+```js
+    "use strict";
+
+    function sayHello(name) {
+        var text = "Hello " + name;
+
+        return function() {
+            console.log(text);
+        }
+    };
+
+    var sayShubham = sayHello("Shubham");
+    sayShubham(); // since sayShubham is now a function, we need to invole it.
+
+```
+With this the <b>Hello Shubham </b> gets printed out. But this goes against what we learnt till now. 
+<b>
+When a function returns a function, (here, sayHello function is returning a function) it keeps a reference to any variable that it needs to execute. Here it's using the text variable, so it keeps a reference to the text variable.  
+</b>
+
+<b>
+That's what closure is, it's a special set of references to variables that a function needs in order to execute which are outside the function scope.
+
+Closures can refer to variables in outer scopes and scope's external to itself. 
+
+Hope this gives atleast a very basic understanding of closures.
+
+Eg:
+```js
+
+    var foo = [];
+
+    for (var i = 0; i< 10; i++){
+        foo[i] = function() { //value of function we are storing in foo array. This is creating another closure
+            return i;
+        };
+    }
+    console.log(foo[0]());
+    console.log(foo[1]());
+    console.log(foo[2]());
+    console.log(foo[3]());
+```
+The output of the above code is:
+```js
+    10
+    10
+    10
+```
+
+EXPLAINATION:: Closure isn't the value of <b> i </b>, it's the actual value of <b> i </b>. 
+
+When we'll console log foo[0], the loop has been exhausted and we're left with i=10. Same is happening with others also.
+
+That's what this particular interview quesiton is trying to capture.
+
+Closure just points to the current value of whatever variables are used in it's function body.
+
+How come we actually implement something that behaves same as we wanted to behave?
+
+```js
+    var foo = [];
+
+    for (var i = 0; i < 10; i++) {
+        (function() {
+            var y = i;
+            foo [i] = function() {
+                return y;
+            };
+        })();
+    }
+    console.log(foo[0]());  //0
+    console.log(foo[1]());//1
+    console.log(foo[2]());//2
+    console.log(foo[3]());//3
+```
+But there is a cleaner way to solve this problem.
+
+Within IIFE when we invoke it with the brackets at the end, we can actually pass in variables.  
+REMEMBER that primitive types are pass by calue, NOT by reference.
+
+```js
+    var foo = [];
+
+    for (var i = 0; i < 10; i++) {
+        (function() {
+            foo [y] = function() {
+                return y;
+            };
+        })(i);
+    }
+    console.log(foo[0]());  //0
+    console.log(foo[1]());//1
+    console.log(foo[2]());//2
+    console.log(foo[3]());//3
+```
+So, there are 3 major things in closures:
+
+1. Closures can refer to outer scope variable or functions even if that outer scope function is exited.
+
+2. Closures point to the current value of the outer scope variable, NOT the value of that outer scope variable/function when the closure was created.
+
+The problem with for loop is very popolar with that.
+
+3. If we want to achieve the desired results, we can achieve that with IIFEs.
+
+
+
+
+
+
+
 
 
 
