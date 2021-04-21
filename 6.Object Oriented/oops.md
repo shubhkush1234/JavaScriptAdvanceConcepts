@@ -9,7 +9,7 @@ If it can't find it, then it will search on the object's prototype and so on.
 Fpr example, we had an object called Person and the instance of the object called person and I'm asking JS to find <b>person.kind</b> to see if there is a property called<b>kind</b> . If it can't find that, then it will look for prototype on the person object.
 And if that points to another object, it will then search the other objects for a property <b>kind</b> if it finds that, it will return that. So, if it doesn't find any, it'll return undefined.
 
-<img src="oops1.png" alt="oops1.png screenshot"/>
+<img src="../images/oops1.png" alt="oops1.png screenshot"/>
 
 So, this works just like single parent inheritance in "class based" languages.
 
@@ -32,8 +32,8 @@ Eg:
     console.log("shubham.kind: ", shubham.kind );
     console.log("animal.isPrototypeOf(shubham): ", animal.isPrototypeOf(shubham));
 ```
-<img src="oops2.png" alt="oops2.png screenshot"/>
-<img src="oops3.png" alt="oops3.png screenshot"/>
+<img src="../images/oops2.png" alt="oops2.png screenshot"/>
+<img src="../images/oops3.png" alt="oops3.png screenshot"/>
 
 Also, lookups are dynamic. If you add a property to the prototype object or you change the property of the prototype object, that's refelected dynamically.
 
@@ -44,7 +44,7 @@ Also, lookups are dynamic. If you add a property to the prototype object or you 
     console.log(animal.kind)
 
 ```
-<img src="oops4.png" alt="oops4.png screenshot"/>
+<img src="../images/oops4.png" alt="oops4.png screenshot"/>
 
 <b>Also, updating a property that previously only existed on the prototype of an object adds it to the object and not to the property to the object.</b>
 
@@ -55,10 +55,10 @@ Same functionalty can be achieved through the Object.create method.
 
 what object.create does is:<b> It creates a new object and assign animal as the prototype of that new object.</b>
 
-<img src="oops5.png" alt="oops5.png screenshot"/>
+<img src="../images/oops5.png" alt="oops5.png screenshot"/>
 Object.create() takes object property (which you want to add) as it's 2nd parameter. 
  
-<img src="oops6.png" alt="oops6.png screenshot"/>
+<img src="../images/oops6.png" alt="oops6.png screenshot"/>
 
 var shubham= Object.create(animal, {food: {value: "mango"}}); //It creates a new object and assign animal as the prototype of that new object. Also, it adds "food" property to the shubham object and assigns it's value as "mango".
 
@@ -91,7 +91,7 @@ var dude= Person("shubham", "Kushwaha");
 //Uncaught TypeError: Cannot set property 'first_name' of undefined
 
 ```
-<img src="oops7.png" alt="oops7.png screenshot"/>
+<img src="../images/oops7.png" alt="oops7.png screenshot"/>
 
 
 This is because by-default "this" is set to global window object but while using "use strict", it's set to undefined if used inside a function.
@@ -111,7 +111,7 @@ var dude= new Person("shubham", "Kushwaha");
 
 ```
 
-<img src="oops8.png" alt="oops8.png screenshot"/>
+<img src="../images/oops8.png" alt="oops8.png screenshot"/>
 
 So, basically what "new" keyword is doing, it was achieved previously by:
 
@@ -153,19 +153,20 @@ console.log(dude.full_name());
 
 2. By using function prototype:
 
-<img src="oops9.png" alt="oops9.png screenshot"/>
+<img src="../images/oops9.png" alt="oops9.png screenshot"/>
 
 So now the question is, where the __proto__ of "dude" points to?
 
 It points to the same object where "prototype" of "Person" is pointing. So, when the object is constructed, it ends up looking like this:
 
-<img src="oops10.png" alt="oops10.png screenshot"/>
+<img src="../images/oops10.png" alt="oops10.png screenshot"/>
 
 It ends up having a "prototype chain" where the "dude" instance points to the "prototype" of the "function constructor" which was used to create "dude" and again and again don the chain reaches to "null".
 
 We can now add function to the prototype of a person which is then made available to "dude" in his prototype chain.
 
 Eg:
+
 ```js
 "use strict";
 
@@ -187,11 +188,12 @@ var dude = new Person("shubham", "Kushwaha");
 console.log(dude.full_name_prototype());
 
 ```
-<img src="oops11.png" alt="oops11.png screenshot"/>
+
+<img src="../images/oops11.png" alt="oops11.png screenshot"/>
 
 The advantage of this approach:
 
-<img src="oops12.png" alt="oops12.png screenshot"/>
+<img src="../images/oops12.png" alt="oops12.png screenshot"/>
 If we create multiple instances, they'll share the same prototype and eventually the function that we added on that, i.e full_name_prototype. It will save a lot og memory.
 
 # WHich one is better approach? #
@@ -205,9 +207,11 @@ But still, our approach needs some modifications. Like we can still change first
 dude.first_name = "Dubam";
 
 ```
+
 So, now our task is to make this immutable. We can take advantage of "closure" here.
 
 Eg:
+
 ```js
 "use strict";
 
@@ -230,44 +234,7 @@ dude.first_name = "Dubam";
 console.log(dude.full_name());
 
 ```
-<img src="oops12.png" alt="oops12.png screenshot"/>
 
-So, we can use the function inside the body of the constructor function as private properties or private member variables by taking advantage of "closure". 
+<img src="../images/oops12.png" alt="oops12.png screenshot"/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+So, we can use the function inside the body of the constructor function as private properties or private member variables by taking advantage of "closure".
