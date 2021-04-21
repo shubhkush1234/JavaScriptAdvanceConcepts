@@ -59,11 +59,11 @@ Eg:
     delete foo;
     console.log(foo); //undefined
 ```
-<img src="useStrict3.png" alt="use strict chrome screenshot"/>
+<img src="../images/useStrict3.png" alt="use strict chrome screenshot"/>
 
 With "use strict":
 
-<img src="useStrict4.png" alt="use strict chrome screenshot"/>
+<img src="../images/useStrict4.png" alt="use strict chrome screenshot"/>
 
 Another feature of "use strict" is It makes "eval" keyword more safer.
 
@@ -73,10 +73,10 @@ Eg:
     eval("var a = 1");
     console.log(a);
 ```
-<img src="useStrict5.png" alt="use strict chrome screenshot"/>
+<img src="../images/useStrict5.png" alt="use strict chrome screenshot"/>
 
 With "use strict":
-<img src="useStrict6.png" alt="use strict chrome screenshot"/>
+<img src="../images/useStrict6.png" alt="use strict chrome screenshot"/>
 
 It means the expression and variables inside the eval doesn't pollute the global namespace.
 
@@ -98,7 +98,7 @@ Pass by value:
     console.log(a); //2
 ```
 
-<img src="passByValue1.png" alt="passByValue1.png screenshot"/>
+<img src="../images/passByValue1.png" alt="passByValue1.png screenshot"/>
 
     It's passing a copy of A, so anything we do with A inside the function won't affect the actual variable A.
 
@@ -120,7 +120,7 @@ Pass by reference:
     console.log(b);
 ```
 
-<img src="passByReferece.png" alt="passByReferece.png screenshot"/>
+<img src="../images/passByReferece.png" alt="passByReferece.png screenshot"/>
     Eg2: Original object property is mutated
 ```javascript
     "use strict";
@@ -131,7 +131,7 @@ Pass by reference:
     shubham(b);
     console.log(b);
 ```
-<img src="passByReferece.png" alt="passByReferece.png screenshot"/>
+<img src="../images/passByReferece.png" alt="passByReferece.png screenshot"/>
 
 # 3. Rest Operator #
 
@@ -150,7 +150,7 @@ For example, we want to sum up the numbers:
     shubhamSum(1,2,3);
 ```
 
-<img src="restOperator.png" alt="restOperator.png screenshot"/>
+<img src="../images/restOperator.png" alt="restOperator.png screenshot"/>
 
 Eg:
 ```javaScript
@@ -160,8 +160,8 @@ Eg:
     }
     shubhamSum(1)
 ```
-<img src="restOperator1.png" alt="restOperator1.png screenshot"/> <br>
-<img src="restOperator2.png" alt="restOperator2.png screenshot"/>
+<img src="../images/restOperator1.png" alt="restOperator1.png screenshot"/> <br>
+<img src="../images/restOperator2.png" alt="restOperator2.png screenshot"/>
 
 All the arguments which gets passed to a function are always available as a variable/property called arguments.
 
@@ -175,7 +175,7 @@ Eg:
     }
     sum(1,2,3,4);
 ```
-<img src="restOperator3.png" alt="restOperator3.png screenshot"/>
+<img src="../images/restOperator3.png" alt="restOperator3.png screenshot"/>
 
 So, this is the only thing we had in JS which allow us to handle variable number of arguments.
 
@@ -193,7 +193,7 @@ To handle the variable number of arguments, we can write:
     }
     shubhamSum(1,2,3,4,5);
 ```
-<img src="restOperator4.png" alt="restOperator4.png screenshot"/>
+<img src="../images/restOperator4.png" alt="restOperator4.png screenshot"/>
 
 The problem is that by looking at the function signature we can't tell that how many arguments the function is going to take.
 
@@ -201,7 +201,7 @@ Other limitation of this code is that there is no fixxed and variable kind of ar
 
 Super annoying thing is that the <b>arguments array</b> is not actually an array.
 
-<img src="restOperator5.png" alt="restOperator5.png screenshot"/>
+<img src="../images/restOperator5.png" alt="restOperator5.png screenshot"/>
 
 For example, while designing a login functionality for my website, we want 1 mandatory parameter <b>login method</b> and other variable number of parameters as optional.
 
@@ -222,11 +222,11 @@ Here in our example, it should give:
 ```javaScript
     [1,2,3,4].slice(1); //[2,3,4]
 ```
-  <img src="restOperator6.png" alt="restOperator6.png screenshot"/>
+  <img src="../images/restOperator6.png" alt="restOperator6.png screenshot"/>
 
   But when we try to slice arguments, BOOM we got an error!!!
 
-  <img src="restOperator7.png" alt="restOperator7.png screenshot"/>
+  <img src="../images/restOperator7.png" alt="restOperator7.png screenshot"/>
 
 Even though the <b>argument</b> looks like an array, but its not an array. It's some sort of built in structure which looks like an array, means it doesn't have the slice function, which is super annoying.
 
@@ -238,7 +238,7 @@ Even though the <b>argument</b> looks like an array, but its not an array. It's 
     }
     login("facebook", 1,2,3,4)
 ```
-  <img src="restOperator8.png" alt="restOperator8.png screenshot"/>
+  <img src="../images/restOperator8.png" alt="restOperator8.png screenshot"/>
 
 The rest operator creates an array of the arguments passed to it.
 Hence we can run array methods on it directly.
@@ -253,7 +253,7 @@ Hence we can run array methods on it directly.
     login("facebook", 1,2,3,4)
 ```
 
-<img src="restOperator9.png" alt="restOperator9.png screenshot"/>
+<img src="../images/restOperator9.png" alt="restOperator9.png screenshot"/>
 
 Improved version of the above code:
 ```js
@@ -264,7 +264,7 @@ Improved version of the above code:
     }
     login("facebook", 1,2,3,4)
 ```
-<img src="restOperator10.png" alt="restOperator10.png screenshot"/>
+<img src="../images/restOperator10.png" alt="restOperator10.png screenshot"/>
 
 # 4. Spread Operator #
 
@@ -274,7 +274,7 @@ Improved version of the above code:
     var ar2 = [4, 5, 6, ...ar1];
     console.log(ar2);
 ```
-<img src="spread.png" alt="spread.png screenshot"/>
+<img src="../images/spread.png" alt="spread.png screenshot"/>
 
 It does a kind of concat.
 
@@ -288,7 +288,7 @@ It does a kind of concat.
         My name is ${name}`;
     console.log(msg);
 ```
-<img src="templateLiteral.png" alt="templateLiteral.png screenshot"/>
+<img src="../images/templateLiteral.png" alt="templateLiteral.png screenshot"/>
 
 We can also write the ternary operator inside the {}.
 
@@ -298,7 +298,7 @@ Eg:
     var msg = `hello world my name is ${isBold ? "<b>Shubham</b>" : "Shubham"}`;
     console.log(msg);
 ```
-<img src="templateLiteral1.png" alt="templateLiteral1.png screenshot"/>
+<img src="../images/templateLiteral1.png" alt="templateLiteral1.png screenshot"/>
 
 Template string's application can be seen with the styled components in <b>ReactJS</b>.
 
@@ -309,7 +309,7 @@ Eg:
     }
     console.log(h1`ShUbHaM`); //<h1>ShUbHaM</h1>
 ```
-<img src="templateLiteral2.png" alt="templateLiteral2.png screenshot"/>
+<img src="../images/templateLiteral2.png" alt="templateLiteral2.png screenshot"/>
 
 Eg: 
 ```js
@@ -322,8 +322,8 @@ Eg:
 ```
 Only first part is getting printed out. It's breaking the string into 3 parts: "hello" , " my name is", " ".
 
-<img src="templateLiteral4.png" alt="templateLiteral4.png screenshot"/>
-<img src="templateLiteral5.png" alt="templateLiteral5.png screenshot"/>
+<img src="../images/templateLiteral4.png" alt="templateLiteral4.png screenshot"/>
+<img src="../images/templateLiteral5.png" alt="templateLiteral5.png screenshot"/>
 
 We solve the above problem with Template String Tags.
 # 6. Template String Tags #
@@ -336,7 +336,7 @@ We solve the above problem with Template String Tags.
     var place= "World";
     console.log(h1`hello ${place} my name is ${name}`);
 ```
-<img src="templateLiteral6.png" alt="templateLiteral6.png screenshot"/>
+<img src="../images/templateLiteral6.png" alt="templateLiteral6.png screenshot"/>
 To print the whole string:
 
 ```js
@@ -352,7 +352,7 @@ To print the whole string:
     var place= "World";
     console.log(h1`hello ${place} my name is ${name}`);
 ```
-<img src="templateLiteral7.png" alt="templateLiteral7.png screenshot"/>
+<img src="../images/templateLiteral7.png" alt="templateLiteral7.png screenshot"/>
 
 Eg: React styled components:
 ```js
@@ -369,34 +369,4 @@ Eg: React styled components:
 ```
 
 So, this is a way of implementing a very flexible reusable model of functions with strings which we call as <b>template string</b>.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
