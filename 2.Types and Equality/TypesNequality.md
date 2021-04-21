@@ -55,7 +55,7 @@ undefined
 window.shubham
 undefined
 ```
-<img src="TypesNequality1.png" alt="TypesNequality1.png screenshot"/>
+<img src="../images/TypesNequality1.png" alt="TypesNequality1.png screenshot"/>
 So, undefined is a core js function uswd by js engine to inform you that if it's an uninitialized variable or unknown property of object or parameter missing from parameter's list or something whose value is not set. 
 
 Null is a programmers way to state that the value is undefined. If JS engine doesnt find any value, it sets it to undefined.
@@ -85,11 +85,11 @@ In JS, null is actually a value.
 
 Triple equal to is called strict requality as it checks the type as well as value whereas double equals to checks only value. 
 
-<img src="TypesNequality2.png" alt="TypesNequality2.png screenshot"/>
+<img src="../images/TypesNequality2.png" alt="TypesNequality2.png screenshot"/>
 
 JS tries to convert the type of value to help the programmers. Eg. For 0 == '0', it passes the value to the JS function String(0) which converts it to "0". Hence it becomes '0'== '0' which is obviously true.
 
-<img src="TypesNequality3.png" alt="TypesNequality3.png screenshot"/>
+<img src="../images/TypesNequality3.png" alt="TypesNequality3.png screenshot"/>
 
 This is called <b>type coersion</b> in JS. When there is non strict equality operator is used, then JS intelligently tries to coerce both values so that they are of the same type.
 
@@ -116,53 +116,16 @@ Eg:
     isNaN(NaN)
     true
 ```
-<img src="TypesNequality4.png" alt="TypesNequality4.png screenshot"/>
+<img src="../images/TypesNequality4.png" alt="TypesNequality4.png screenshot"/>
 
 NaN is not equal to NaN. So, fot the sake of comparison, there is one inbuilt function available in JS called isNaN.
 
 But there is a problem with this function also:
 
-<img src="TypesNequality5.png" alt="TypesNequality5.png screenshot"/>
+<img src="../images/TypesNequality5.png" alt="TypesNequality5.png screenshot"/>
 
 So, <b>How to check if the variable is NaN?</b>
 
 Since NaN is a single JS value which is not equal to itself, so the only fool proof way to check if a variable is NaN is by using <b>!==</b> . 
 
-<img src="TypesNequality6.png" alt="TypesNequality6.png screenshot"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img src="../images/TypesNequality6.png" alt="TypesNequality6.png screenshot"/>

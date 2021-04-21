@@ -33,12 +33,12 @@ It also console logs the global window object. Till now we can conclude that thi
     shubham.checkThis();
     console.log(shubham);
 ```
-<img src="This1.png" alt="This1.png screenshot"/>
+<img src="../images/this1.png" alt="this1.png screenshot"/>
 
 Here, the this keyword is pointing to the object "shubham".
 To prove this, lets console log this object as well.
 
-<img src="This2.png" alt="This2.png screenshot"/>
+<img src="../images/this2.png" alt="this2.png screenshot"/>
 
 Yes, confirmed, it's exact same!
 
