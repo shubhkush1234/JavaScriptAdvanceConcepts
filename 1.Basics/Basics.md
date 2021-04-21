@@ -8,7 +8,7 @@ It makes debugging easier.
 
 In strict mode, using a variable before it's been defined causes an error.
 
-<img src="useStrict1.png" alt="use strict chrome screenshot"/>
+<img src="../images/useStrict1.png" alt="use strict chrome screenshot"/>
 
  For example:
 ```javascript
@@ -36,7 +36,7 @@ var theVal = 0;
 ```
 
 OUTPUT:: Uncaught ReferenceError: thVal is not defined.
-<img src="useStrict12.png" alt="use strict chrome screenshot"/>
+<img src="../images/useStrict12.png" alt="use strict chrome screenshot"/>
 
 So, the "use strict" eleminates accidental global variables and variable declaration without "var" keyword.
 
@@ -48,7 +48,7 @@ Eg:
     var let = 1;
 ```
 OUTPUT:: Uncaught SyntaxError: Unexpected strict mode reserved word.
-<img src="useStrict2.png" alt="use strict chrome screenshot"/>
+<img src="../images/useStrict2.png" alt="use strict chrome screenshot"/>
 
 
 Another feature of "strict mode" is You cannot delete variables, functions and function arguments.
