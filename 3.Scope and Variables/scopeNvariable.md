@@ -6,7 +6,7 @@
 2. Function scope
 3. Block scope
 
-<img src="scopeNvariable.png" alt="scopeNvariable.png screenshot"/>
+<img src="../images/scopeNvariable.png" alt="scopeNvariable.png screenshot"/>
 
 1. Global scope:
 
@@ -16,11 +16,11 @@ All the global variables are the properties of the window object.
 
 2. Function scope:
 
-<img src="scopeNvariable.png" alt="scopeNvariable.png screenshot"/>
+<img src="../images/scopeNvariable.png" alt="scopeNvariable.png screenshot"/>
 
 Java and Python coders will think that it's having block scope. So, to demonstrate it, lets try out an example:
 
-<img src="scopeNvariable1.png" alt="scopeNvariable1.png screenshot"/>
+<img src="../images/scopeNvariable1.png" alt="scopeNvariable1.png screenshot"/>
 
 ```js
     "use strict";
@@ -37,7 +37,7 @@ loops are having global scope and hence i and j are also having the global scope
 
     <h5>Let and const keyword</h5>
 
-<img src="scopeNvariable2.png" alt="scopeNvariable2.png screenshot"/>
+<img src="../images/scopeNvariable2.png" alt="scopeNvariable2.png screenshot"/>
 
 ```js
     "use strict";
@@ -74,7 +74,7 @@ What is variable hoisting?
 
 ```
 
-<img src="hoisting.png" alt="hoisting.png screenshot"/>
+<img src="../images/hoisting.png" alt="hoisting.png screenshot"/>
 
 In strict mode, we cant assign a value to a variable without declaring it. But why does JS didn't gave any error? Why "undefined"  is  assigned to it? what IS is doing under the hood?
 
@@ -213,7 +213,7 @@ Eg:
 ```
 The code gives reference error: myVar is not defined.
 
-<img src="scopeChain.png" alt="scopeChain.png screenshot"/>
+<img src="../images/scopeChain.png" alt="scopeChain.png screenshot"/>
 
 EXPLAINATION:::
 
