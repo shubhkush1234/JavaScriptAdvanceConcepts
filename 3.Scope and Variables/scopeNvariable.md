@@ -343,6 +343,7 @@ This is how we can control the leaking of the scope of variable.
 lets go with an example.
 
 Eg:
+
 ```js
 
     function sayHello(name) {
@@ -353,6 +354,7 @@ Eg:
     sayHello("Shubham");
 
 ```
+
 So, it's a pretty simple function that just prints out the name. 
 
 Now I want to return a function from "sayHello" function which returns my name.
@@ -391,10 +393,11 @@ In code we can run it like this:
     };
 
     var sayShubham = sayHello("Shubham");
-    sayShubham(); // since sayShubham is now a function, we need to invole it.
+    sayShubham(); // since sayShubham is now a function, we need to invoke it.
 
 ```
-With this the <b>Hello Shubham </b> gets printed out. But this goes against what we learnt till now. 
+
+With this the <b> Hello Shubham </b> gets printed out. But this goes against what we learnt till now. 
 <b>
 When a function returns a function, (here, sayHello function is returning a function) it keeps a reference to any variable that it needs to execute. Here it's using the text variable, so it keeps a reference to the text variable.  
 </b>
@@ -421,8 +424,11 @@ Eg:
     console.log(foo[2]());
     console.log(foo[3]());
 ```
+
 The output of the above code is:
+
 ```js
+
     10
     10
     10
@@ -454,6 +460,7 @@ How come we actually implement something that behaves same as we wanted to behav
     console.log(foo[2]());//2
     console.log(foo[3]());//3
 ```
+
 But there is a cleaner way to solve this problem.
 
 Within IIFE when we invoke it with the brackets at the end, we can actually pass in variables.  
@@ -483,45 +490,3 @@ So, there are 3 major things in closures:
 The problem with for loop is very popolar with that.
 
 3. If we want to achieve the desired results, we can achieve that with IIFEs.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

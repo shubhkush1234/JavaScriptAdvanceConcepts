@@ -1,0 +1,18 @@
+<head>
+  Callback
+</head>
+
+<script>
+  const per1 = (frndName, callFrnd) => {
+    console.log(` Hi ${frndName}, I'll call you back! `);
+    callFrnd();
+  };
+
+  const per2 = () => {
+    console.log(
+      `I'm callback func as I'm passes as argument, also called after func1 execution.`
+    );
+  };
+
+  per1("Shubham", per2);
+</script>

@@ -33,6 +33,7 @@ It also console logs the global window object. Till now we can conclude that thi
     shubham.checkThis();
     console.log(shubham);
 ```
+
 <img src="../images/this1.png" alt="this1.png screenshot"/>
 
 Here, the this keyword is pointing to the object "shubham".
@@ -44,8 +45,7 @@ Yes, confirmed, it's exact same!
 
 So, till now we can conclude that "this" refers to the object the function is declared on. 
 
-
-```js 
+```javaScript
 
     var shubham = {
         checkThis : function() {
@@ -59,46 +59,7 @@ So, till now we can conclude that "this" refers to the object the function is de
     func();
 
 ```
+
 Again, this is referring to the global window object.
 
 In JS, "this" is determined by the calling context. It is determined by the way in which function is called.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
