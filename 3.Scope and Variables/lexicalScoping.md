@@ -15,7 +15,7 @@ A wrapper to help manage the code that is running.
 
 There are a lot of lexical environments. Which one is currently running is managed via execution contexts. It can contain things beyond what you've written in your code.
 
-<img src="./images/executionContextCreation" alt="executionContextCreation" />
+<img src="./images/executionContextCreation.png" alt="executionContextCreation" />
 
 Hoisting:
 ========
